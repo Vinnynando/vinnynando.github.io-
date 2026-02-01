@@ -79,15 +79,21 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-
 ul, ol {
-  list-style-position: inside; 
+  list-style-position: inside;
   padding: 0;
   margin: 0;
-  text-align: center; 
+  text-align: center;
 }
 
 ul li, ol li {
   display: inline-block;
-  margin: 0 15px; 
+  margin: 0 15px;
+}
+
+ul, ol {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
