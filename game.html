@@ -18,18 +18,23 @@
   </ul>
 </nav>
 
-<h1>Play the Game</h1>
+<h1>Guess the Movie / TV Show</h1>
 
-<p><strong>This feature is currently under construction.</strong></p>
+<div id="game-container">
+  <div id="clue-container">
+    <img id="clue-image" src="" alt="Clue" />
+    <p id="clue-text"></p>
+  </div>
 
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</p>
+  <input type="text" id="answer-input" placeholder="Type your answer here..." />
+  <button id="submit-answer">Submit</button>
 
+  <p id="feedback"></p>
+  <p id="fun-fact"></p>
+
+  <p>Score: <span id="score">0</span></p>
+</div>
+
+<script src="game.js"></script>
 </body>
-
 </html>
-
-
-
