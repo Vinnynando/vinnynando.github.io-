@@ -3,7 +3,7 @@ let currentClueIndex = 0;
 
 const clues = [
   {
-    clueImage: 'path/to/movie-poster1.jpg', // Use actual image URLs
+    clueImage: 'path/to/movie-poster1.jpg',
     clueText: 'A young wizard attends Hogwarts School of Witchcraft and Wizardry.',
     answer: 'Harry Potter',
     funFact: 'Did you know? The "Harry Potter" books have been translated into over 80 languages!'
@@ -41,9 +41,9 @@ function checkAnswer() {
   document.getElementById('score').textContent = score;
 
   setTimeout(() => {
-    currentClueIndex = (currentClueIndex + 1) % clues.length; // Cycle through clues
+    currentClueIndex = (currentClueIndex + 1) % clues.length; 
     loadClue();
-  }, 2000); // 2-second delay to give feedback
+  }, 2000); 
 }
 
 
