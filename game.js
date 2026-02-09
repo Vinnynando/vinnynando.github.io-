@@ -3,7 +3,7 @@ let currentClueIndex = 0;
 
 const clues = [
   {
-    clueImage: 'https://github.com/Vinnynando/vinnynando.github.io-/blob/main/HPimage.png.webp?raw=true',
+    clueImage: https://github.com/Vinnynando/vinnynando.github.io-/blob/main/HPimage.png.webp?raw=true,
     clueText: 'A young wizard attends Hogwarts School of Witchcraft and Wizardry.',
     answer: 'Harry Potter',
     funFact: 'Did you know? The "Harry Potter" books have been translated into over 80 languages!'
