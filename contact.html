@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact</title>
+  <title>Contact Us - Guess the Movie / TV Show</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+  
 <nav>
   <ul>
     <li><a href="index.html">Home</a></li>
@@ -18,27 +18,24 @@
   </ul>
 </nav>
 
-<h1>Contact</h1>
-
-<p><strong>Get in Touch</strong></p>
+<h1>Contact Us</h1>
 
 <p>
-   <p>We’d love to hear from you! Whether you have a question, feedback, or a fun movie fact to share, reach out to us: </p>
-
-   <p>Email: gtmsite@gmail.com</p>
-
-   <p><strong>Feedback & Suggestions</strong></p>
-   <p>Your ideas help us make the game even better! Tell us about your favorite features, new clue ideas, or any bugs you notice while playing.</p>
-
-   <p><strong>Collaboration & Media Inquiries</strong></p>
-   <p>If you’re a blogger, journalist, or influencer and want to feature Guess the Movie / TV Show, drop us a line at the email above—we’d love to collaborate!</p>
+  Have questions, feedback, or suggestions? Fill out the form below and we’ll get back to you!
 </p>
 
+<form action="submit.php" method="post">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
 
-<header>
-  <img src="https://github.com/Vinnynando/vinnynando.github.io-/blob/main/Banner.png?raw=true">
-</header>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
 
-  
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="5" cols="40" required></textarea><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
 </body>
 </html>
