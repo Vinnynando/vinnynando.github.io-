@@ -5,26 +5,43 @@
   <title>Contact Us - Guess the Movie / TV Show</title>
   <link rel="stylesheet" href="style.css">
   <script>
-    function handleSubmit(event) {
-      event.preventDefault(); 
+
+    const SHEET_URL = "https://script.google.com/macros/s/AKfycbxvsE5BlVkOqjPdJa2utXYT-_6q7R3Ia1i1X_8rKeIUX63o6CD7dcAHtSWsj0-BDQ1J/exec";
+
+    async function handleSubmit(event) {
+      event.preventDefault();
+
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
       const message = document.getElementById('message').value;
 
- 
-      const formContainer = document.getElementById('form-container');
-      formContainer.innerHTML = `
-        <h1>Thank You, ${name}!</h1>
-        <p>Your message has been received:</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong> ${message.replace(/\n/g, '<br>')}</p>
-        <p><a href="index.html">Return to Home</a></p>
-      `;
+      try {
+        const response = await fetch(SHEET_URL, {
+          method: "POST",
+          body: JSON.stringify({name, email, message}),
+          headers: { "Content-Type": "application/json" }
+        });
+
+        const result = await response.json();
+
+        if(result.status === "success") {
+          document.getElementById('form-container').innerHTML = `
+            <h1>Thank You, ${name}!</h1>
+            <p>Your message has been successfully sent.</p>
+            <p><a href="index.html">Return to Home</a></p>
+          `;
+        } else {
+          alert("There was an error submitting your form. Please try again.");
+        }
+
+      } catch (err) {
+        alert("Error submitting the form: " + err);
+      }
     }
   </script>
 </head>
 <body>
-  
+
 <nav>
   <ul>
     <li><a href="index.html">Home</a></li>
@@ -36,22 +53,25 @@
   </ul>
 </nav>
 
-<h1>Contact Us</h1>
+<header>
+  <img src="https://github.com/Vinnynando/vinnynando.github.io-/blob/main/Banner.png?raw=true" alt="Guess the Movie / TV Show Banner">
+</header>
 
+<h1>Contact Us</h1>
 <p>Have questions, feedback, or suggestions? Fill out the form below and we’ll get back to you!</p>
 
 <div id="form-container">
   <form onsubmit="handleSubmit(event)">
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name" required><br><br>
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
 
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" required><br><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
 
-      <label for="message">Message:</label><br>
-      <textarea id="message" name="message" rows="5" cols="40" required></textarea><br><br>
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="5" cols="50" required></textarea><br><br>
 
-      <input type="submit" value="Submit">
+    <input type="submit" value="Submit">
   </form>
 </div>
 
