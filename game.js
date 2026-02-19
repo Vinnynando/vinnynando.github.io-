@@ -9,7 +9,7 @@ const clues = [
     funFact: 'Did you know? The "Harry Potter" books have been translated into over 80 languages!'
   },
   {
-    clueImage: 'path/to/movie-poster2.jpg',
+    clueImage: 'https://github.com/Vinnynando/vinnynando.github.io-/blob/main/lotr.jpg?raw=true',
     clueText: 'The journey to destroy the One Ring.',
     answer: 'The Lord of the Rings',
     funFact: 'Fun Fact: "The Lord of the Rings" trilogy won 17 Academy Awards!'
